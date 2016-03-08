@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/jquery.mobile-1.4.5.min.js"></script>
+    <title>jQuery Mobile</title>  
+    <style>
+    
+    </style>
+  </head>
+  <body>
+    <!-- Home page -->
+    <article data-role="page" id="home" >
+        <header data-role="header"  data-theme="b">
+            <h1>My Blog</h1>
+        </header>
+        <section role="main" class="ui-content">
+            <h2>Welcome to my blog</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde sed, voluptas. Porro a minima, repellendus expedita earum necessitatibus aliquid suscipit ipsa voluptate dignissimos sit omnis quae, quisquam dolores voluptatum veniam!</p>
+            <a class="ui-btn ui-corner-all ui-btn-inline"href="#recent-posts" data-transition="flip">Recent Posts</a>
+        </section>
+        <footer data-role="footer">
+            <h4>Page 01 Footer</h4>
+        </footer>
+    </article>
+    
+     <!-- Recent Posts -->
+    <article data-role="page" id="recent-posts" class="custom-footer custom-header" data-title="Recent Posts">   
+        <section role="main" class="ui-content">
+            <form class="iu-filterable">
+                <input id="search-posts" data-type="search">
+            </form>
+            <ul data-filter="true" data-inset="true" data-role="listview" data-input="#search-posts" id="post-list">
+            </ul>
+        </section>
+    </article>
+    
+    <script src="js/app.js"></script>
+    <script src="http://devise-expert.co.uk/?json=1&callback=loadRecentPosts"></script>
+
+  </body>
+</html>
