@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <script src="./js/jquery-1.11.1.min.js"></script>
     <script src="./js/jquery.mobile-1.4.5.min.js"></script>
     <title>jQuery Mobile</title>  
@@ -20,11 +21,12 @@
         <section role="main" class="ui-content">
             <h2>Welcome to my blog</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde sed, voluptas. Porro a minima, repellendus expedita earum necessitatibus aliquid suscipit ipsa voluptate dignissimos sit omnis quae, quisquam dolores voluptatum veniam!</p>
-            <a class="ui-btn ui-corner-all ui-btn-inline"href="#recent-posts" data-transition="flip">Recent Posts</a>
+           
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#recent-posts">Posts</a></li>
+                <li><a href="#categories">Categories</a></li>
+            </ul>  
         </section>
-        <footer data-role="footer">
-            <h4>Page 01 Footer</h4>
-        </footer>
     </article>
     
      <!-- Recent Posts -->
@@ -38,6 +40,24 @@
         </section>
     </article>
     
+    
+    <!-- The post -->
+    <article data-role="page" id="post" class="custom-footer custom-header" data-title="">   
+        <section role="main" class="ui-content">
+            <div id="post-content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt explicabo impedit autem inventore magnam pariatur dolore id! Atque praesentium beatae error, tempora velit neque eos cupiditate? Tempora impedit aliquam recusandae.
+            </div>
+        </section>
+    </article>
+    
+     <!-- List of categories -->
+    <article data-role="page" id="categories" class="custom-footer custom-header" data-title="List of Categories">   
+        <section role="main" class="ui-content">
+            <ul id="clist" data-role="listview" data-count-theme="b" data-inset="true">
+              
+            </ul>
+        </section>
+    </article>
     <script src="js/app.js"></script>
     <script src="http://devise-expert.co.uk/?json=1&callback=loadRecentPosts"></script>
 
