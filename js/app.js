@@ -36,7 +36,9 @@ $(document).ready(function(){
                    if( category.parent == 0 && category.post_count > 0 )
                     {
                         var $li_c = $li.clone();
-                        $li_c.find('a').prepend(category.title);
+                        $li_c.find('a').prepend(category.title)
+                                       .data('cat-id', category.id)
+                                       .on('vclick', showPostsInCategory);
                         $li_c.find('span').html(category.post_count);
                         $('#clist').append($li_c);
                     }
@@ -109,7 +111,7 @@ function showPost(){
         var post = data.post;
         $('#post :jqmData(role="header")').find('h1').html(post.title);
         $('#post-content').html(post.content);
-        console.log('post', post.thumbnail_images['post-thumbnail']);
+        //console.log('post', post.thumbnail_images['post-thumbnail']);
         if( post.thumbnail_images != undefined &&  
             post.thumbnail_images['post-thumbnail'] != undefined &&
             post.thumbnail_images['post-thumbnail'].url != undefined)
@@ -129,3 +131,7 @@ function showPost(){
                 .removeAttr('style');
     });//get the post
 }
+
+function showPostsInCategory(){
+    console.log('category id:', $(this).data('cat-id'))
+}// show posts in category
